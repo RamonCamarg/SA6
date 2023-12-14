@@ -24,6 +24,8 @@ public class JanelaPrincipal extends JFrame {
         // criandos as tabs
 
         ComprasPainel tab1 = new ComprasPainel();
+        ClientesPainel tab3 = new ClientesPainel();
+        EstoquePainel tab2 = new EstoquePainel();
         if (JOptionPane.showConfirmDialog(null, "O cliente é VIP?",
                 "Cliente VIP", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION) {
             painelRei.add("Compras", tab1);
@@ -40,16 +42,19 @@ public class JanelaPrincipal extends JFrame {
                         painelRei.add("Compras", tab1);
                         cpfCorreto = true;
                     } else {
-                        JOptionPane.showMessageDialog(null,"CPF Incorreto, por favor digite novamente","Aviso",JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "CPF Incorreto, por favor digite novamente", "Aviso",
+                                JOptionPane.WARNING_MESSAGE);
                     }
                 }
             }
-        }
 
-        EstoquePainel tab2 = new EstoquePainel();
-        painelRei.add("Produtos", tab2);
-        ClientesPainel tab3 = new ClientesPainel();
-        painelRei.add("Clientes VIP", tab3);
+            painelRei.add("Compras", tab1);
+
+            painelRei.add("Produtos", tab2);
+
+            painelRei.add("Clientes VIP", tab3);
+
+        }
 
         setBounds(100, 100, 700, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
